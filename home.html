@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Welcome {{ user.username }}</h1>
+    <html>
+    <head>
+        <style>
+            * {
+                font-size: 50px;
+            }
+            body {
+                background-color: lightblue;
+            }
+        </style>
+
+        <script>
+            function check() {
+                let num = document.getElementById("num").value;
+                let ans = document.getElementById("ans");
+
+                if (num === "") {
+                    alert("Input is empty");
+                    ans.innerHTML = "";
+                    return false;
+                } else {
+                    if (num % 2 === 0) {
+                        ans.innerHTML = "Even";
+                    } else {
+                        ans.innerHTML = "Odd";
+                    }
+                    return false;  // Prevent form submission for this example
+                }
+            }
+        </script>
+    </head>
+    <body>
+    <center>
+        <h2>EVEN ODD FINDER APP</h2>
+        <form onsubmit="return check()">
+            <input type="number" name="num" placeholder="Enter an integer" id="num"/>
+            <br><br>
+            <input type="submit" value="Find"/>
+        </form>
+        <div id="ans"></div>
+    </center>
+    <h5 style="font-size: 20px; color: white; background-color: lightblue; border-radius: 50px; width: 30%; padding: 15px; position: absolute; left: 40; border-width: 30%;">Purnima Nahata 1592336</h5>
+    </body>
+    </html>
+{% endblock %}
